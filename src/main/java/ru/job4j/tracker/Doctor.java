@@ -5,6 +5,15 @@ import java.util.Dictionary;
 public class Doctor extends Profession {
     private int experence;
     private int operatingHours;
+    private int quantityPacient;
+
+    public void setQuantityPacient(int quantityPacient) {
+        this.quantityPacient = quantityPacient;
+    }
+
+    public int getQuantityPacient() {
+        return quantityPacient;
+    }
 
     public int getExperence() {
         return experence;
