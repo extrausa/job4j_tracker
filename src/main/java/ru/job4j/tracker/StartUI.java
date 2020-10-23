@@ -8,6 +8,7 @@ public class StartUI {
         String dataTime = one.getCurrentDateTimeFormat();
         System.out.println(dataTime);
         System.out.println(one.toString());
+
     }
 
 
