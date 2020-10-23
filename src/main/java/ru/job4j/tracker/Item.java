@@ -39,6 +39,17 @@ public class Item {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", currentDateTime=" + currentDateTime +
+                ", formatter=" + formatter +
+                ", currentDateTimeFormat='" + currentDateTimeFormat + '\'' +
+                '}';
+    }
+
     public void setName(String name) {
         this.name = name;
     }
