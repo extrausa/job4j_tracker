@@ -40,14 +40,12 @@ public class Tracker {
 //        }
         //return Arrays.copyOf(items, size);
 
-
-
     }
 
     public List<Item> findByName(String key) {
         List<Item> result = new ArrayList<>();
         for (Item i : items) {
-            if (i.getName().equals(key)){
+            if (i.getName().equals(key)) {
                 result.add(i);
             }
         }
@@ -93,7 +91,7 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexOf(id);
         boolean rsl = index != -1;
-        if (index != -1){
+        if (index != -1) {
 //            items[index] = null;
 //            System.arraycopy(items, index + 1, items, index, size - index);
 //            items[size - 1] = null;

@@ -129,6 +129,7 @@ public class StartUI {
 //
 //        }
     }
+
     private void showMenu(List<UserAction> actions) {
         out.println("Menu.");
         for (int i = 0; i < actions.size(); i++) {
@@ -167,12 +168,9 @@ public class StartUI {
 //                new FindeByNameItem(output),
 //                new FindeByIdItem(output),
 //                new ExitProgramm(output)
-//
-//
 //        };
         new StartUI(output).init(input, tracker, actions);
         //new StartUI().init(input, tracker);
-
 
     }
 

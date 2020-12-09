@@ -1,4 +1,4 @@
-ваpackage ru.job4j.inheritance;
+package ru.job4j.inheritance;
 
 public class JSONReport extends TextReport {
 
@@ -7,6 +7,5 @@ public class JSONReport extends TextReport {
         //return  name + " : name"+"," + System.lineSeparator() + body + " : body";
         return String.format("{%n\t\"name\":%s, %n\t\"body\":%s%n}", name, body);
     }
-
 
 }
