@@ -1,31 +1,25 @@
 package ru.job4j.tracker;
-//2. Перегрузка конструктора [#363143]
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
+import java.util.Comparator;
+import java.util.Objects;
+
+//Класс Item описывает модель заявления.
+//Поле id - это уникальный номер заявления.
+//Поле name содержит название заявления.
 public class Item {
+
     private int id;
     private String name;
-    private LocalDateTime currentDateTime = LocalDateTime.now();
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-    private String currentDateTimeFormat = currentDateTime.format(formatter);
 
-    public Item() {};
+    public Item() {
 
-    public Item(int id, String name) {
-        this.id = id;
+    }
+
+    public Item(String name) {
         this.name = name;
     }
 
-    public Item(int id) {
-        this.id = id;
-    }
 
-
-    public String getCurrentDateTimeFormat() {
-        return currentDateTimeFormat;
-    }
 
     public int getId() {
         return id;
@@ -39,17 +33,21 @@ public class Item {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", formatter=" + formatter +
-                ", currentDateTimeFormat='" + currentDateTimeFormat + '\'' +
-                '}';
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id &&
+                Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
